@@ -19,7 +19,7 @@ export default function Home() {
 
   async function fetchData(cityName : string) {
     try{
-      const response = await fetch(`http://localhost:3000/api/weather?city=${cityName}`);
+      const response = await fetch(`https://waether.vercel.app/api/weather?city=${cityName}`);
       const jsonData = (await response.json()).data;  
       setWeatherData(jsonData);
     }catch(error){
@@ -29,7 +29,7 @@ export default function Home() {
 
   async function fetchDataLatLon(lat : number,lon : number) {
     try{
-      const response = await fetch(`http://localhost:3000/api/weather?lat=${lat}&lon=${lon}`);
+      const response = await fetch(`https://waether.vercel.app/api/weather?lat=${lat}&lon=${lon}`);
       const jsonData = (await response.json()).data;  
       setWeatherData(jsonData);
     }catch(error){
